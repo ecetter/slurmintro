@@ -1,2 +1,2 @@
 # slurmintro
-A simple introduction to Slurm
+A simple introduction to Slurm.
