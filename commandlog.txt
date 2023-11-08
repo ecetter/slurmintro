@@ -1,0 +1,37 @@
+#
+# Commands for Introduction to Slurm session
+#
+
+# connect to Roar Collab (RC) via submit node
+ssh <userid>@submit.hpc.psu.edu
+
+# navigate to scratch
+cd ~/scratch
+
+# download files
+git clone https://github.com/ecetter/slurmintro.git
+cd slurmintro
+
+# check for access to compute accounts
+mybalance
+
+# initialize interactive compute session
+salloc -N 2 -n 4 -A open -t 2:00:00
+
+# list nodes on which job tasks are running
+bash checknodefile.sh
+
+# list nodes on which job is running
+scontrol show hostname
+
+# submit batch job
+sbatch fibonacci.slurm
+
+# monitor running jobs
+squeue -u <userid>
+
+# set recommended squeue format variable
+export SQUEUE_FORMAT="%.7i %9P %35j %.8u %.2t %.12M %.12L %.5C %.7m %.4D %R"
+
+# get more details about specific job
+scontrol show job <jobid>
