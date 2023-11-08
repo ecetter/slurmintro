@@ -2,9 +2,6 @@
 # Commands for Introduction to Slurm session
 #
 
-# connect to Roar Collab (RC) via submit node
-ssh <userid>@submit.hpc.psu.edu
-
 # navigate to scratch
 cd ~/scratch
 
